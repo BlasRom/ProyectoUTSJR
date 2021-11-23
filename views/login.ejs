@@ -1,0 +1,27 @@
+<%- include('templates/encabezado')%>
+<body>
+	<div class="row mt-5">
+		<div class="col-2"></div>
+		<div class="col-8">
+			<form action="/login" method="POST">
+				<div class="card ">
+					<div class="card-header">
+						<h1>Login</h1>
+					</div>
+					<div class="card-body">                    
+						<input class="form-control mb-3" type="text" name="usuarioLogin" id="usuarioLogin" placeholder="Username">
+						<input class="form-control mb-3" type="text" name="contraLogin" id="contraLogin" placeholder="Password">
+					</div>
+					<div class="card-footer">
+						<button class="form-control btn btn-primary" type="submit">Entar al sistema</button>
+                        <a class="btn btn-secondary mt-3 mb-3 col-12" href="/Registrar">Registrar</a>
+						<a class="btn btn-secondary mt-3 mb-3 col-12" href="/noticias">Invitado</a>
+					</div>
+				</div>     
+			</form>
+		</div>
+		<div class="col-2"></div>
+	</div>
+	
+</body>
+<%- include('templates/pie')%>

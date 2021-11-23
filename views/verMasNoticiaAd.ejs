@@ -1,0 +1,44 @@
+<%- include('templates/encabezado')%>
+<%- include('templates/navbar_admin')%>   
+<div class="row mt-5">
+    <div class="col-1"></div>
+    <div class="co-10">
+<h1><p class="text-dark">Noticias</p></h1>
+
+<div class="card border-primary mb-3 responsive">
+    <div class="card-header">Editor: <%= noticia.editor %> || Fecha: <%= noticia.fecha %></div>
+    <div class="card-body text-primary">
+      <h5 class="card-title"><%= noticia.titulo %></h5>
+      <p class="card-text"><%= noticia.cuerpo %></p>
+      ⭐<%= noticia.likes %>
+
+      <% comment.forEach((comment)=>{
+
+     %>
+      <ul class="list-group p-2">
+        <div class="card-body text-primary">
+
+          <p class="lead"><%= comment.usuario %></p>
+            <p class="lead"><%= comment.comment %></p>
+          <footer class="blocquote-footer"><%= comment.timesamp %></footer>
+      </ul>
+      <%
+    }); %>
+
+      <form action="/insertarComentario" method="POST">
+        
+            <div class="card-body">    
+                <input class="form-control mb-2" type="hidden" name="noticia_id" id="noticia_id" value="<%=noticia._id%>">                
+                <input class="form-control mb-2" type="text" name="email" id="email" placeholder="Email">
+                <input class="form-control mb-2" type="text" name="usuario" id="usuario" placeholder="Usuario" >
+                <input class="form-control mb-2" type="text" name="comment" id="comment" placeholder="Comentario">
+            </div>
+            <div class="card-footer">
+                <button class="form-control btn btn-primary" type="submit">Insertar</button>
+            </div>
+        </div>     
+    </form>
+  </div>
+  </div>
+
+<%- include('templates/pie')%>

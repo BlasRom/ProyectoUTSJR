@@ -1,0 +1,45 @@
+<%- include('templates/encabezado')%>
+<%- include('templates/navbar_admin')%>   
+<div class="row mt-5">
+    <div class="col-1"></div>
+    <div class="co-10">
+<h1><p class="text-dark">Lista de Usuarios</p></h1>
+<table class="table table-light table-striped" >
+    <thead>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Tipo</th>
+        <th>Modificar/Eliminar</th>
+    </thead>
+    <tbody>
+        <%
+         var i=1;
+         usuarios.forEach((usuario)=>{
+               %>
+        <tr>
+            <td><%= i %></td>
+            <td><%=usuario.nombre %></td>
+            <td><%=usuario.correo%></td>
+            <td><%=usuario.usuario %></td>
+            <td><%=usuario.password %></td>
+            <td><%=usuario.tipo %></td>
+            <td>
+                <a href="/modificarUsuario/<%= usuario._id %>">📝</a> /
+                <a href="/eliminarUsuario/<%= usuario._id%>">🗑</a>
+            </td>
+        </tr>
+        
+       <%
+    i++;
+         }); 
+       %>
+        
+    </tbody>
+</table>
+    </div>
+    <div class="col-1"></div>
+</div>
+<%- include('templates/pie')%>

@@ -1,0 +1,29 @@
+<%- include('templates/encabezado')%>
+<%- include('templates/navbar_admin')%>   
+
+    <div class="row mt-5">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <form action="/modificarUsuario" method="POST">
+                <div class="card">
+                    <div class="card-header">
+                        <h1>Modficar usuario</h1>
+                    </div>
+                    <div class="card-body">
+                        <input type="hidden" name="idModificar" id="idModificar" value="<%= usuario._id %>">
+                        <input class="form-control mb-3" type="text" name="nombreModificar" id="nombreModificar" placeholder="Nombre" value="<%=usuario.nombre%>">
+                        <input class="form-control mb-3" type="text" name="correoModificar" id="correoModificar" placeholder="Correo" value="<%=usuario.correo%>">
+                        <input class="form-control mb-3" type="text" name="usuarioModificar" id="usuarioModificar" placeholder="usuario" value="<%=usuario.usuario%>">
+                        <input class="form-control mb-3" type="text" name="passwordModificar" id="passwordModificar" placeholder="Password" value="<%=usuario.password%>">
+                        <input class="form-control mb-3" type="text" name="tipoModificar" id="tipoModificar" placeholder="tipo" value="<%=usuario.tipo%>" >            
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-secondary mt-3 mb-3 col-12" href="/mostrarUsuarios">Cancelar</a>
+                        <button class="form-control btn btn-primary" type="submit">Modificar usuario</button>
+                    </div>
+                </div>     
+            </form>
+        </div>
+        <div class="col-2"></div>
+    </div>
+    <%- include('templates/pie')%>

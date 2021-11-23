@@ -1,0 +1,27 @@
+<%- include('templates/encabezado')%>
+<body>
+	<div class="row mt-5">
+		<div class="col-2"></div>
+		<div class="col-8">
+			<form action="/Registrar" method="POST">
+				<div class="card">
+					<div class="card-header">
+						<h1>Registro</h1>
+					</div>
+					<div class="card-body">                    
+						<input class="form-control mb-3" type="text" name="nombre" id="nombre" placeholder="Nombre">
+                        <input class="form-control mb-3" type="text" name="correo" id="correo" placeholder="Correo">
+                        <input class="form-control mb-3" type="text" name="usuario" id="usuario" placeholder="Nombre de Usuario">
+                        <input class="form-control mb-3" type="text" name="password" id="password" placeholder="Password">
+                        <input type="text" name="tipo" id="tipo" value="usuario" hidden>
+					</div>
+					<div class="card-footer">
+						<button class="form-control btn btn-primary" type="submit">Registrar</button>
+					</div>
+				</div>     
+			</form>
+		</div>
+		<div class="col-2"></div>
+	</div>
+	
+</body>

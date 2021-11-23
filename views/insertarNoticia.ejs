@@ -1,0 +1,28 @@
+<%- include('templates/encabezado')%>
+<%- include('templates/navbar_admin')%>   
+<body>
+	<div class="row mt-5">
+		<div class="col-2"></div>
+		<div class="col-8">
+			<form action="/insertarNoticia" method="POST">
+				<div class="card">
+					<div class="card-header">
+						<h1>Insertar nueva noticia</h1>
+					</div>
+					<div class="card-body">                    
+						<input class="form-control mb-3" type="text" name="titulo" id="titulo" placeholder="Titulo">
+                        <input class="form-control mb-3" type="text" name="fecha" id="fecha" placeholder="Fecha:">
+                        <input class="form-control mb-3" type="text" name="cuerpo" id="cuerpo" placeholder="Cuerpo">
+                        <input class="form-control mb-3" type="text" name="editor" id="editor" placeholder="Editor">
+					</div>
+					<div class="card-footer">
+						<button class="form-control btn btn-primary" type="submit">Insertar</button>
+					</div>
+				</div>     
+			</form>
+		</div>
+		<div class="col-2"></div>
+	</div>
+	
+</body>
+<%- include('templates/pie')%>

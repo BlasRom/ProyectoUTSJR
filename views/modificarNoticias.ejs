@@ -1,0 +1,29 @@
+<%- include('templates/encabezado')%>
+<%- include('templates/navbar_admin')%>   
+<body>
+	<div class="row mt-5">
+		<div class="col-2"></div>
+		<div class="col-8">
+			<form action="/modificarNoticias" method="POST">
+				<div class="card">
+					<div class="card-header">
+						<h1>Modificar noticia</h1>
+					</div>
+					<div class="card-body">
+                        <input  type="hidden" name="idModificar" id="idModificar" value="<%=noticia._id%>">                    
+						<input class="form-control mb-3" type="text" name="tituloModificar" id="tituloModificar" placeholder="Titulo" value="<%=noticia.titulo%>"> 
+                        <input class="form-control mb-3" type="text" name="fechaModificar" id="fechaModificar" placeholder="Fecha:DD/MM/AA" value="<%=noticia.fecha%>">
+                        <input class="form-control mb-3" type="text" name="cuerpoModificar" id="cuerpoModificar" placeholder="Cuerpo" value="<%=noticia.cuerpo%>">
+                        <input class="form-control mb-3" type="text" name="editorModificar" id="editoModificarr" placeholder="Editor" value="<%=noticia.editor%>">
+					</div>
+					<div class="card-footer">
+						<button class="form-control btn btn-primary" type="submit">Modficar</button>
+					</div>
+				</div>     
+			</form>
+		</div>
+		<div class="col-2"></div>
+	</div>
+	
+</body>
+<%- include('templates/pie')%>

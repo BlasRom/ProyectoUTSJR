@@ -1,0 +1,25 @@
+<%- include('templates/encabezado')%>
+<%- include('templates/navbar_us')%>   
+<div class="row mt-5">
+    <div class="col-1"></div>
+    <div class="co-10">
+<h1><p class="text-dark">Noticias</p></h1>
+<%
+
+noticias.forEach((noticia)=>{
+    
+
+%>
+<div class="card border-primary mb-3 responsive">
+    <div class="card-header">Editor: <%= noticia.editor %> || Fecha: <%= noticia.fecha %></div>
+    <div class="card-body text-primary">
+      <h5 class="card-title"><%= noticia.titulo %></h5>
+      <p class="card-text"><%= noticia.cuerpo %></p>
+      <a class="btn btn-primary" href="/verMasNoticia/<%=noticia._id%>">Comentarios</a>
+  </div>
+  </div>
+  <%
+         }); 
+       %>
+
+<%- include('templates/pie')%>
