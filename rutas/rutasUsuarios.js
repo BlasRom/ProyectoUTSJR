@@ -296,5 +296,16 @@ ruta.get('/eliminarUsuario/:id',(req,res)=>{
 });
 
 
+ruta.get('/eliminarComentario/:id',(req,res)=>{
+    var id=req.params.id;
+    Comment.findByIdAndDelete(id)
+    .then(()=>{
+        res.redirect('/noticiasAdmin');
+    })
+    .catch((err)=>{
+        res.status(400).send("Error al eliminar el comentario");
+    });
+});
+
 
 module.exports=ruta;

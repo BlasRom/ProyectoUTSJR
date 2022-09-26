@@ -10,11 +10,9 @@
     <div class="card-body text-primary">
       <h5 class="card-title"><%= noticia.titulo %></h5>
       <p class="card-text"><%= noticia.cuerpo %></p>
-      ⭐<%= noticia.likes %>
-
       <% comment.forEach((comment)=>{
-
      %>
+
       <ul class="list-group p-2">
         <div class="card-body text-primary">
 
@@ -22,6 +20,7 @@
             <p class="lead"><%= comment.comment %></p>
           <footer class="blocquote-footer"><%= comment.timesamp %></footer>
       </ul>
+      <a href="/eliminarComentario/<%=comment._id%>">🗑</a>
       <%
     }); %>
 

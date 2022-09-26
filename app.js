@@ -1,4 +1,5 @@
 const express= require('express');
+const helmet = require("helmet");
 const mongoose=require('mongoose');
 const session=require('express-session');
 const path=require('path');
@@ -15,6 +16,8 @@ mongoose.set('useFindAndModify', false);
 
 
 const app=express();
+app.use(helmet());
+app.use(helmet.frameguard({ action: 'SAMEORIGIN' }));
 app.set('view engine','ejs');
 app.use(session({
     secret:"lo que sea",
@@ -28,5 +31,7 @@ app.use('/', usuarios);
 
  const port=process.env.PORT || 3000;
  app.listen(3000,()=>{
-  console.log(`Servidor en el puerto ${port}`)  
+  console.log(`Servidor en el puerto ${port}`) 
 })
+
+
